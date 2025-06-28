@@ -18,8 +18,9 @@ export default defineConfig({ // Mude de module.exports = para export default
       timestamp: "mmddyyyy_HHMMss"
     },
     env: {
-      email: "teste@teste.com",
-      senha:"senha123"
+      email: "teste@testeee.com",
+      senha:"123456",
+      api_login: "http://localhost:8080/auth/login"
     }
   }
 });
