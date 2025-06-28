@@ -36,7 +36,7 @@ jobs:
 
        run: |
 
-         cd vollmed-tests/server
+         cd server
 
          npm install
 
@@ -58,7 +58,7 @@ jobs:
 
        run: |
 
-         cd vollmed-tests/web
+         cd web
 
          npm install
 
