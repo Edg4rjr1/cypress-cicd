@@ -41,6 +41,8 @@ jobs:
 
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
+        working-directory: ./web
+
         with:
           spec: |
             cypress/e2e/cadastro-sucesso.cy.js
