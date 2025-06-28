@@ -20,6 +20,7 @@ jobs:
           cd server
           npm install
           npm start &
+
           until [ "$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)" == "200" ]; do
             echo "Waiting for server to start..."
             sleep 1
@@ -31,6 +32,7 @@ jobs:
           cd web
           npm install
           npm start &
+
           until [ "$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000)" == "200" ]; do
             echo "Waiting for frontend to start..."
             sleep 1
@@ -44,5 +46,5 @@ jobs:
             cypress/e2e/cadastro-sucesso.cy.js
             cypress/e2e/login-clinica.cy.js
             cypress/e2e/dashboard.cy.js
-          wait-on: 'http://localhost:3000,http://localhost:8080'
+          wait-on: http://localhost:3000,http://localhost:8080
           wait-on-timeout: 60
