@@ -40,7 +40,7 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
         with:
-          config-file: cypress.config.js
+          config-file: cypress.config.mjs
           wait-on: 'http://localhost:3000,http://localhost:8080'
           wait-on-timeout: 60
           spec: |
