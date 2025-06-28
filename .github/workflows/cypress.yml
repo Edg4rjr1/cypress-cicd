@@ -47,4 +47,3 @@ jobs:
             cypress/e2e/cadastro-sucesso.cy.js
             cypress/e2e/login-clinica.cy.js
             cypress/e2e/dashboard.cy.js
-        working-directory: vollmed-tests
