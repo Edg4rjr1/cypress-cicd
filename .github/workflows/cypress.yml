@@ -1,81 +1,59 @@
-name: Cypress Tests
+name: Cypress CI
 
 on:
-
- push:
-
-   branches:
-
-     - testes
+  push:
+    branches:
+      - testes 
 
 jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
 
- cypress-run:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-   runs-on: ubuntu-latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-   strategy:
+      - name: Start backend server
+        run: |
+          # Navega para a pasta do backend
+          cd server 
 
-     fail-fast: false
+          # Instala as dependências do backend
+          npm install
 
-   steps:
+          # Compila o TypeScript do backend
+          npm run compile
 
-     - name: Checkout
+          # Inicia o servidor compilado em segundo plano
+          npm run serve & 
 
-       uses: actions/checkout@v4
+          # Espera o servidor estar pronto (responde com 200)
+          until [ "$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)" == "200" ]; do
+            echo "Waiting for backend server to start..."
+            sleep 1
+          done
+          echo "Backend server is running successfully."
+        shell: /usr/bin/bash -e {0} 
 
-     - name: Checkout
+      - name: Install Cypress dependencies (se seu cypress/package.json for separado)
+ 
+        run: |
+          # Se o Cypress usa o package.json na raiz, use:
+          # npm install
+          # Se o Cypress tem seu próprio package.json dentro de 'cypress/', use:
+          # cd cypress && npm install && cd ..
+          # Por enquanto, vamos assumir que as dependências principais estão na raiz ou já foram instaladas.
+          # Se o cypress é na raiz:
+          npm install 
+       
 
-       uses: actions/checkout@v4
-
-       with:
-
-         path: server
-
-     - name: Start Server BackEnd
-
-       run: |
-
-         cd server
-
-         npm install
-
-         npm start &
-
-         until [ "$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)" == "200" ]; do
-
-           echo "Waiting for server to start..."
-
-           sleep 1
-
-         done
-
-         echo "Server is running successfully."
-
-       working-directory: server
-
-     - name: Start Web App FrontEnd
-
-       run: |
-
-         cd web
-
-         npm install
-
-         npm start &
-
-     - name: Run Cypress Tests
-
-       uses: cypress-io/github-action@v6
-
-       with:
-
-         spec: |
-
-           cypress/e2e/cadastro-sucesso.cy.js
-
-           cypress/e2e/login-clinica.cy.js
-
-           cypress/e2e/dashboard.cy.js
-
-         wait-on: 'http://localhost:3000,http://localhost:8080'
+      - name: Run Cypress tests
+        run: npx cypress run 
+        env:
+          CYPRESS_BASE_URL: http://localhost:8080
+         
