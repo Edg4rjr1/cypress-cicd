@@ -1,12 +1,8 @@
 // cypress.config.mjs
-import { defineConfig } from "cypress"; // Mude de require para import
+import { defineConfig } from "cypress";
 
-export default defineConfig({ // Mude de module.exports = para export default
+export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      // Se houver algum 'require' aqui dentro no futuro, ele também precisará ser alterado para 'import'
-    },
     baseUrl: 'http://localhost:3000/',
     video: true,
     reporter: 'mochawesome',
@@ -19,7 +15,10 @@ export default defineConfig({ // Mude de module.exports = para export default
     },
     env: {
       email: "teste@teste.com",
-      senha:"senha123"
+      senha: "senha123"
+    },
+    specPattern: 'cypress/e2e/**/*.cy.{js,ts}', // 👈 ESSENCIAL
+    setupNodeEvents(on, config) {
     }
   }
 });
