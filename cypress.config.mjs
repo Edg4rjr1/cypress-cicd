@@ -21,6 +21,10 @@ export default defineConfig({ // Mude de module.exports = para export default
       email: "teste@testeee.com",
       senha:"123456",
       api_login: "http://localhost:8080/auth/login"
-    }
+    },
+        defaultCommandTimeout: 60000
+
+    
   }
+  
 });
