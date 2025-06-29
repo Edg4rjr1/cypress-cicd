@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix: [1, 2]
 
     steps:
       - name: Checkout código
@@ -43,6 +44,8 @@ jobs:
           config-file: cypress.config.mjs
           wait-on: 'http://localhost:3000,http://localhost:8080'
           record: true
+          parallel: true
+          group: 'Cypress Tests'
           wait-on-timeout: 60
 
         env:
