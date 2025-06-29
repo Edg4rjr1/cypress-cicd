@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # <-- Alinhado com matrix:
-      matrix: [1, 2]
+      matrix: 
+        index: [1, 2]
 
     steps:
       - name: Checkout código
