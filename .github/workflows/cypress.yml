@@ -42,7 +42,7 @@ jobs:
         with:
           config-file: cypress.config.mjs
           wait-on: 'http://localhost:3000,http://localhost:8080'
-          recorde: true
+          record: true
           wait-on-timeout: 60
 
         env:
