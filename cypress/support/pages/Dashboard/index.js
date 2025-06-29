@@ -6,6 +6,14 @@ class CadastroEspecialista {
         cy.get(ELEMENTS.botaoCadastrarEspecialista).click()
     }
 
+    checkbox(index){
+          cy.get(ELEMENTS.checkbox).eq(index).check({ force: true })
+
+    }
+
+    ativarCheckBox(){
+        cy.get(ELEMENTS.ativarCheckBox).click()
+    }
 }
 
 export default new CadastroEspecialista

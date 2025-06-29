@@ -1,3 +1,5 @@
+import Login from "../support/pages/Login";
+
 describe('Pagina de Login', () => {
     beforeEach(() => {
       cy.login(Cypress.env('email'), Cypress.env('senha'))
@@ -8,7 +10,7 @@ describe('Pagina de Login', () => {
 
     it('Fazer logout', () => {
       cy.visit('/dashboard')
-      cy.get('.sc-fLcnxK').should('be.visible').click()
+      Login.botaoLogout()
       cy.contains('Cadastre-se').should('be.visible')
     });
 

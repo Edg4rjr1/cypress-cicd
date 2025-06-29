@@ -15,7 +15,7 @@ describe('Funcionalidade de Cadastro de Usuário', () => {
             senhaVerificada: 'senha123',
             telefone: '0011223344',
             cep: '64012354',
-            rua: 'Rua la casa do karalho',
+            rua: 'Rua Santos Dummont',
             numero: '6984',
             complemento: 'Ap 202',
             estado: 'pi' 

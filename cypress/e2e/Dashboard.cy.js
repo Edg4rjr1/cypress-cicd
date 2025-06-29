@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-
+import CadastroEspecialista from '../support/pages/Dashboard/index.js'
 describe('Acessando e Cadastrando na página de dashboard', () => {
 
   beforeEach(() => {
@@ -25,9 +25,10 @@ describe('Acessando e Cadastrando na página de dashboard', () => {
         estado: 'SP' 
       }
     };
-    cy.cadastroEspecialista(dadosDoEspecialista);   
-    cy.get('.sc-bjfHbI').click()
-    cy.get('.MuiFormGroup-root input[type="checkbox"]').eq(2).check({ force: true }) 
+    cy.cadastroEspecialista(dadosDoEspecialista);  
+    CadastroEspecialista.ativarCheckBox() 
+    CadastroEspecialista.checkbox(2)
+
   });
 
 
