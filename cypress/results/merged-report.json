@@ -1,0 +1,241 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-06-29T15:15:12.738Z",
+    "end": "2025-06-29T15:15:45.054Z",
+    "duration": 32316
+  },
+  "results": [
+    {
+      "uuid": "0e9c7975-c2ff-4052-a452-b1a8a84d4968",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Cadastro.cy.js",
+      "file": "cypress\\e2e\\Cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "13a19844-fac1-4461-8112-a91db7e6d370",
+          "title": "Funcionalidade de Cadastro de Usuário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar um cadastro completo com informações válidas e verificar o sucesso",
+              "fullTitle": "Funcionalidade de Cadastro de Usuário Deve realizar um cadastro completo com informações válidas e verificar o sucesso",
+              "timedOut": null,
+              "duration": 6022,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dadosDoNovoUsuario = {\n  nome: 'Junior Teste',\n  cnpj: '151545151',\n  email: `teste${Cypress._.random(0, 10000)}@teste.com`,\n  senha: 'senha123',\n  senhaVerificada: 'senha123',\n  telefone: '0011223344',\n  cep: '64012354',\n  rua: 'Rua Santos Dummont',\n  numero: '6984',\n  complemento: 'Ap 202',\n  estado: 'pi'\n};\n_index.default.clicarLinkParaCadastro();\n_index.default.realizarCadastroCompleto(dadosDoNovoUsuario);\ncy.log('Verificar sucesso do cadastro aqui.');\ncy.contains('Faça login em sua conta').should('be.visible');",
+              "err": {},
+              "uuid": "42a7ef0c-c52f-43f1-8290-fe717b00a8ae",
+              "parentUUID": "13a19844-fac1-4461-8112-a91db7e6d370",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "42a7ef0c-c52f-43f1-8290-fe717b00a8ae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "110b06ec-49c1-4989-ab8b-903c316f1bdc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Dashboard.cy.js",
+      "file": "cypress\\e2e\\Dashboard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "96454b66-e575-47d8-8a1b-745d953ef316",
+          "title": "Fazendo login e Cadastrando na página de dashboard",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "deve cadastrar um novo especialista com sucesso",
+              "fullTitle": "Fazendo login e Cadastrando na página de dashboard deve cadastrar um novo especialista com sucesso",
+              "timedOut": null,
+              "duration": 10698,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dadosDoEspecialista = {\n  nome: _faker.faker.person.fullName(),\n  email: _faker.faker.internet.email(),\n  senha: _faker.faker.internet.password({\n    length: 10\n  }),\n  especialidade: 'Clínica Geral',\n  crm: _faker.faker.string.numeric(6),\n  telefone: _faker.faker.phone.number('##-#####-####'),\n  imagemUrl: _faker.faker.image.avatar(),\n  endereco: {\n    cep: _faker.faker.location.zipCode('#####-###'),\n    rua: _faker.faker.location.streetAddress(),\n    bairro: _faker.faker.location.county(),\n    numero: _faker.faker.location.buildingNumber(),\n    complemento: 'Bloco A, Apt 10',\n    estado: 'SP'\n  }\n};\ncy.cadastroEspecialista(dadosDoEspecialista);\n_index.default.ativarCheckBox();\n_index.default.checkbox(2);",
+              "err": {},
+              "uuid": "7926bdc4-5922-4f46-a185-83301b8ae742",
+              "parentUUID": "96454b66-e575-47d8-8a1b-745d953ef316",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7926bdc4-5922-4f46-a185-83301b8ae742"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10698,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "73b99fa6-e0a4-4315-8798-8d24d397bafa",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Login.cy.js",
+      "file": "cypress\\e2e\\Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "74689cb1-04f6-492e-bdd9-542b0551f7b4",
+          "title": "Pagina de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se dashboard está visível",
+              "fullTitle": "Pagina de Login Verificar se dashboard está visível",
+              "timedOut": null,
+              "duration": 2711,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "557babf3-41b5-43b8-a406-236aab15dc33",
+              "parentUUID": "74689cb1-04f6-492e-bdd9-542b0551f7b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer logout",
+              "fullTitle": "Pagina de Login Fazer logout",
+              "timedOut": null,
+              "duration": 779,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/dashboard');\n_Login.default.botaoLogout();\ncy.contains('Cadastre-se').should('be.visible');",
+              "err": {},
+              "uuid": "c8939c6b-2326-4058-984e-cb4e9c926125",
+              "parentUUID": "74689cb1-04f6-492e-bdd9-542b0551f7b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "557babf3-41b5-43b8-a406-236aab15dc33",
+            "c8939c6b-2326-4058-984e-cb4e9c926125"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3490,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

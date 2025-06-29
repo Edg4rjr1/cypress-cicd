@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-29T15:15:12.738Z",
+    "end": "2025-06-29T15:15:18.828Z",
+    "duration": 6090,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0e9c7975-c2ff-4052-a452-b1a8a84d4968",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Cadastro.cy.js",
+      "file": "cypress\\e2e\\Cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "13a19844-fac1-4461-8112-a91db7e6d370",
+          "title": "Funcionalidade de Cadastro de Usuário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar um cadastro completo com informações válidas e verificar o sucesso",
+              "fullTitle": "Funcionalidade de Cadastro de Usuário Deve realizar um cadastro completo com informações válidas e verificar o sucesso",
+              "timedOut": null,
+              "duration": 6022,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dadosDoNovoUsuario = {\n  nome: 'Junior Teste',\n  cnpj: '151545151',\n  email: `teste${Cypress._.random(0, 10000)}@teste.com`,\n  senha: 'senha123',\n  senhaVerificada: 'senha123',\n  telefone: '0011223344',\n  cep: '64012354',\n  rua: 'Rua Santos Dummont',\n  numero: '6984',\n  complemento: 'Ap 202',\n  estado: 'pi'\n};\n_index.default.clicarLinkParaCadastro();\n_index.default.realizarCadastroCompleto(dadosDoNovoUsuario);\ncy.log('Verificar sucesso do cadastro aqui.');\ncy.contains('Faça login em sua conta').should('be.visible');",
+              "err": {},
+              "uuid": "42a7ef0c-c52f-43f1-8290-fe717b00a8ae",
+              "parentUUID": "13a19844-fac1-4461-8112-a91db7e6d370",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "42a7ef0c-c52f-43f1-8290-fe717b00a8ae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

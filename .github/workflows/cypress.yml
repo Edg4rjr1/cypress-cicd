@@ -9,7 +9,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # <-- Alinhado com matrix:
+      fail-fast: false 
       matrix: 
         index: [1, 2]
 

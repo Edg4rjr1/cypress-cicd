@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import CadastroEspecialista from '../support/pages/Dashboard/index.js'
-describe('Acessando e Cadastrando na página de dashboard', () => {
+
+describe('Fazendo login e Cadastrando na página de dashboard', () => {
 
   beforeEach(() => {
     cy.login(Cypress.env('email'), Cypress.env('senha'));
@@ -30,6 +31,5 @@ describe('Acessando e Cadastrando na página de dashboard', () => {
     CadastroEspecialista.checkbox(2)
 
   });
-
 
 });
