@@ -6,4 +6,10 @@ describe('Pagina de Login', () => {
     it('Verificar se dashboard está visível', () => {
     });
 
+    it('Fazer logout', () => {
+      cy.visit('/dashboard')
+      cy.get('.sc-fLcnxK').should('be.visible').click()
+      cy.contains('Cadastre-se').should('be.visible')
+    });
+
   })

@@ -13,11 +13,14 @@ export default defineConfig({
       json: false,
       timestamp: "mmddyyyy_HHMMss"
     },
+
+    projectId: "wb4odw",
+    
     env: {
-      email: "teste@teste.com",
+      email: "teste123@teste.com",
       senha: "senha123"
     },
-    specPattern: 'cypress/e2e/**/*.cy.{js,ts}', // 👈 ESSENCIAL
+    specPattern: 'cypress/e2e/**/*.cy.{js,ts}', 
     setupNodeEvents(on, config) {
     }
   }
